@@ -2,10 +2,11 @@ import styled, { css } from "styled-components";
 
 export const AccountList = styled.ul`
   list-style: none;
+  padding-left: 0;
 `;
 
 export const AccountLabel = styled.div`
-  font-size: ${(props) => props.theme.typography.xl.fontSize}px;
+  font-size: ${(props) => props.theme.typography.xl.fontSize};
   line-height: ${(props) => props.theme.typography.xl.lineHeight};
   color: ${(props) => props.theme.colors.neutral[900]};
   margin-bottom: ${(props) => props.theme.space.s};
@@ -99,11 +100,6 @@ export const RowContainer = styled.div`
   &:not(:last-child) {
     margin-bottom: ${(props) => props.theme.space.m};
   }
-`;
-
-export const Chevron = styled.div`
-  margin-left: ${(props) => props.theme.space.m};
-  opacity: 0.3;
 `;
 
 // export const FormContainer = styled.div`

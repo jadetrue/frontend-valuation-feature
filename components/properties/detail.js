@@ -1,29 +1,17 @@
 /* eslint-disable max-statements */
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React from "react";
 import { add, format } from "date-fns";
-// import ZooplaConnectionCTA from "../../banking-integration/components/cta-zoopla-property";
-// import LastUpdated from "../../connections/details/data/components/last-updated";
-
-// import ListPanel from "../components/detail/list-panel";
-// // import AccountPanel from "../components/account-panel";
-// // import ButtonPanel from "../components/detail/button-panel";
-
-// import ArchiveButton from "../components/detail/archive-button";
-// import ManageButton from "../components/detail/manage-button";
-// import LinkPropertyModal from "./link-mortgage";
+import { Button } from "../button";
 
 import {
   AccountHeadline,
   AccountLabel,
   AccountSection,
   AccountList,
-  AccountListItem,
-  InfoIcon,
   InfoText,
   Inset,
   RowContainer,
-  Chevron,
 } from "./style";
 
 const Detail = () => {
@@ -48,12 +36,11 @@ const Detail = () => {
     ],
     canBeManaged: false,
     postcode: "BS1 2AA",
-    lastUpdate: "2020-12-03T08:55:33.421Z",
+    lastUpdate: "2020-12-01T08:55:33.421Z",
     updateAfterDays: 30,
   };
 
   let mortgage;
-  const onClick = () => alert("You have navigated away");
   const lastUpdate = new Date(account.lastUpdate);
   if (account.associatedMortgages.length) {
     mortgage = account.associatedMortgages[0];
@@ -68,14 +55,13 @@ const Detail = () => {
             {`£${account.recentValuation.amount}`}
           </AccountHeadline>
           <AccountList>
-            {/* <Flex> */}
             <InfoText>
-              {`Last updated ${format(lastUpdate, "Do MMM yyyy")}`}
+              {`Last updated ${format(lastUpdate, "do MMM yyyy")}`}
             </InfoText>
             <InfoText>
               {`Next update ${format(
                 add(lastUpdate, { days: account.updateAfterDays }),
-                "Do MMM yyyy"
+                "do MMM yyyy"
               )}`}
             </InfoText>
           </AccountList>
@@ -84,56 +70,34 @@ const Detail = () => {
           <AccountLabel>Property details</AccountLabel>
           <RowContainer>
             <AccountList>
-              <AccountListItem key="name">
-                <InfoText>{account.name}</InfoText>
-              </AccountListItem>
-              <AccountListItem key="type">
-                <InfoText>{account.bankName}</InfoText>
-              </AccountListItem>
-              <AccountListItem key="postcode">
-                <InfoText>{account.postcode}</InfoText>
-              </AccountListItem>
+              <InfoText>{account.name}</InfoText>
+              <InfoText>{account.bankName}</InfoText>
+              <InfoText>{account.postcode}</InfoText>
             </AccountList>
           </RowContainer>
         </AccountSection>
         {mortgage && (
           <AccountSection>
             <AccountLabel>Mortgage</AccountLabel>
-            <RowContainer onClick={onClick}>
-              <AccountListItem key="balance">
+            <RowContainer
+              onClick={() => alert("You have navigated to the mortgage page")}
+            >
+              <AccountList>
                 <InfoText>{`£${Math.abs(
                   account.associatedMortgages[0].currentBalance
                 )}`}</InfoText>
-              </AccountListItem>
-              <AccountListItem key="mortgage">
                 <InfoText>{account.associatedMortgages[0].name}</InfoText>
-              </AccountListItem>
-
-              {onClick && <Chevron>></Chevron>}
+              </AccountList>
             </RowContainer>
           </AccountSection>
-          // <Button onPress={() => setModalIsOpen(true)} type="secondary">
-          //   {T("accounts.details.type.properties.changeMortgage")}
-          // </Button>
         )}
+        <Button>Edit account</Button>
       </Inset>
     </div>
   );
 };
 
 Detail.propTypes = {
-  accountDetailsActionCreator: PropTypes.object.isRequired,
-  navigationActionCreator: PropTypes.object.isRequired,
-  manageConnectionHandler: PropTypes.func.isRequired,
-  confirmationActionCreator: PropTypes.object.isRequired,
-  mortgageActionCreator: PropTypes.object.isRequired,
-  routingService: PropTypes.object.isRequired,
-  iconService: PropTypes.object.isRequired,
-  settingsStore: PropTypes.object,
-  editHandler: PropTypes.func.isRequired,
-  archiveHandler: PropTypes.func.isRequired,
-  tenantConfiguration: PropTypes.object.isRequired,
-  mortgagesWithoutProperties: PropTypes.array.isRequired,
   account: PropTypes.shape({
     uid: PropTypes.string.isRequired,
     associatedMortgages: PropTypes.array.isRequired,
@@ -151,11 +115,6 @@ Detail.propTypes = {
     originalPurchasePrice: PropTypes.number,
     originalPurchasePriceDate: PropTypes.string,
   }),
-};
-
-Detail.contextTypes = {
-  numberFormatter: PropTypes.object.isRequired,
-  dateService: PropTypes.object.isRequired,
 };
 
 export default Detail;

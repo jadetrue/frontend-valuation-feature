@@ -19,7 +19,6 @@ export default function PropertyDetails() {
   return (
     <Main>
       <Detail />
-      <Box>Property Details</Box>
     </Main>
   );
 }
