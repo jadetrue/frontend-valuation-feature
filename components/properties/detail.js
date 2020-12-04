@@ -14,7 +14,7 @@ import {
   RowContainer,
 } from "./style";
 
-const Detail = () => {
+const Detail = ({}) => {
   const account = {
     uid: "65156cdc-5cfd-4b34-b626-49c83569f35e",
     deleted: false,
@@ -47,53 +47,51 @@ const Detail = () => {
   }
 
   return (
-    <div>
-      <Inset>
-        <AccountSection>
-          <AccountLabel>Estimated Value</AccountLabel>
-          <AccountHeadline>
-            {`£${account.recentValuation.amount}`}
-          </AccountHeadline>
+    <Inset>
+      <AccountSection>
+        <AccountLabel>Estimated Value</AccountLabel>
+        <AccountHeadline>
+          {`£${account.recentValuation.amount}`}
+        </AccountHeadline>
+        <AccountList>
+          <InfoText>
+            {`Last updated ${format(lastUpdate, "do MMM yyyy")}`}
+          </InfoText>
+          <InfoText>
+            {`Next update ${format(
+              add(lastUpdate, { days: account.updateAfterDays }),
+              "do MMM yyyy"
+            )}`}
+          </InfoText>
+        </AccountList>
+      </AccountSection>
+      <AccountSection>
+        <AccountLabel>Property details</AccountLabel>
+        <RowContainer>
           <AccountList>
-            <InfoText>
-              {`Last updated ${format(lastUpdate, "do MMM yyyy")}`}
-            </InfoText>
-            <InfoText>
-              {`Next update ${format(
-                add(lastUpdate, { days: account.updateAfterDays }),
-                "do MMM yyyy"
-              )}`}
-            </InfoText>
+            <InfoText>{account.name}</InfoText>
+            <InfoText>{account.bankName}</InfoText>
+            <InfoText>{account.postcode}</InfoText>
           </AccountList>
-        </AccountSection>
+        </RowContainer>
+      </AccountSection>
+      {mortgage && (
         <AccountSection>
-          <AccountLabel>Property details</AccountLabel>
-          <RowContainer>
+          <AccountLabel>Mortgage</AccountLabel>
+          <RowContainer
+            onClick={() => alert("You have navigated to the mortgage page")}
+          >
             <AccountList>
-              <InfoText>{account.name}</InfoText>
-              <InfoText>{account.bankName}</InfoText>
-              <InfoText>{account.postcode}</InfoText>
+              <InfoText>{`£${Math.abs(
+                account.associatedMortgages[0].currentBalance
+              )}`}</InfoText>
+              <InfoText>{account.associatedMortgages[0].name}</InfoText>
             </AccountList>
           </RowContainer>
         </AccountSection>
-        {mortgage && (
-          <AccountSection>
-            <AccountLabel>Mortgage</AccountLabel>
-            <RowContainer
-              onClick={() => alert("You have navigated to the mortgage page")}
-            >
-              <AccountList>
-                <InfoText>{`£${Math.abs(
-                  account.associatedMortgages[0].currentBalance
-                )}`}</InfoText>
-                <InfoText>{account.associatedMortgages[0].name}</InfoText>
-              </AccountList>
-            </RowContainer>
-          </AccountSection>
-        )}
-        <Button>Edit account</Button>
-      </Inset>
-    </div>
+      )}
+      <Button>Edit account</Button>
+    </Inset>
   );
 };
 
