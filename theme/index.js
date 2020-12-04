@@ -12,6 +12,7 @@ export const theme = {
     body: `"sans-serif"`,
   },
   colors: {
+    primary: generateShades("#01a5b8"),
     neutral: {
       default: "#9e9e9e",
       100: "#f7f7f7",
