@@ -6,7 +6,6 @@ import { Banner } from "../components/banner";
 const Box = styled.div`
   background-color: ${({ theme }) => theme.colors.neutral["100"]};
   color: #000;
-  font-family: ${({ theme }) => theme.fonts.body};
   font-size: 80px;
   padding: 32px;
 `;

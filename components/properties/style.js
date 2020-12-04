@@ -1,16 +1,16 @@
-import styled, { css } from "styled-components";
+import styled, {css} from "styled-components"
 
 export const AccountList = styled.ul`
   list-style: none;
   padding-left: 0;
-`;
+`
 
 export const AccountLabel = styled.div`
   font-size: ${(props) => props.theme.typography.xl.fontSize};
   line-height: ${(props) => props.theme.typography.xl.lineHeight};
   color: ${(props) => props.theme.colors.neutral[900]};
   margin-bottom: ${(props) => props.theme.space.s};
-`;
+`
 
 // export const BodyText = styled(Typography.Body)`
 //   color: ${neutral(800)};
@@ -22,7 +22,7 @@ export const AccountHeadline = styled.h2`
   line-height: ${(props) => props.theme.typography["2xl"].lineHeight};
   color: ${(props) => props.theme.colors.neutral[800]};
   margin-bottom: ${(props) => props.theme.space.s};
-`;
+`
 
 export const InfoText = styled.div`
   line-height: 1.6;
@@ -34,24 +34,25 @@ export const InfoText = styled.div`
   p {
     margin-bottom: ${(props) => props.theme.space.s};
   }
-`;
+`
 
 export const Inset = styled.div`
   padding: 0 ${(props) => props.theme.space.m};
-`;
+`
 
 export const AccountSection = styled.div`
-padding: ${(props) => props.theme.space.m} 0;
-&:not(:last-of-type) {
+  padding: ${(props) => props.theme.space.m} 0;
+
+  &:not(:last-of-type) {
     border-bottom: 1px solid ${(props) => props.theme.colors.neutral[200]};
   }
 }
-`;
+`
 
 export const Flex = styled.div`
   display: flex;
   margin-bottom: ${(props) => props.theme.space.s};
-`;
+`
 
 // export const AccountWrapper = styled.div`
 //   margin-bottom: ${push(2)};
@@ -63,7 +64,7 @@ export const AccountListItem = styled.div`
   &:not(:last-of-type) {
     margin-bottom: ${(props) => props.theme.space.s};
   }
-`;
+`
 
 // export const Dialog = styled.div`
 //   display: flex;
@@ -100,7 +101,7 @@ export const RowContainer = styled.div`
   &:not(:last-child) {
     margin-bottom: ${(props) => props.theme.space.m};
   }
-`;
+`
 
 // export const FormContainer = styled.div`
 //   min-height: ${push(20)};
