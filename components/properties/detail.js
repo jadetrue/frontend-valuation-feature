@@ -1,6 +1,7 @@
 /* eslint-disable max-statements */
 import PropTypes from "prop-types";
 import React, { useState } from "react";
+import { add, format } from "date-fns";
 // import ZooplaConnectionCTA from "../../banking-integration/components/cta-zoopla-property";
 // import LastUpdated from "../../connections/details/data/components/last-updated";
 
@@ -16,12 +17,13 @@ import {
   AccountHeadline,
   AccountLabel,
   AccountSection,
-  Balance,
   AccountList,
   AccountListItem,
   InfoIcon,
   InfoText,
   Inset,
+  RowContainer,
+  Chevron,
 } from "./style";
 
 const Detail = () => {
@@ -46,8 +48,13 @@ const Detail = () => {
     ],
     canBeManaged: false,
     postcode: "BS1 2AA",
+    lastUpdate: "2020-12-03T08:55:33.421Z",
+    updateAfterDays: 30,
   };
+
   let mortgage;
+  const onClick = () => alert("You have navigated away");
+  const lastUpdate = new Date(account.lastUpdate);
   if (account.associatedMortgages.length) {
     mortgage = account.associatedMortgages[0];
   }
@@ -58,73 +65,57 @@ const Detail = () => {
         <AccountSection>
           <AccountLabel>Estimated Value</AccountLabel>
           <AccountHeadline>
-            <Balance>{`£${account.recentValuation.amount}`}</Balance>
+            {`£${account.recentValuation.amount}`}
           </AccountHeadline>
+          <AccountList>
+            {/* <Flex> */}
+            <InfoText>
+              {`Last updated ${format(lastUpdate, "Do MMM yyyy")}`}
+            </InfoText>
+            <InfoText>
+              {`Next update ${format(
+                add(lastUpdate, { days: account.updateAfterDays }),
+                "Do MMM yyyy"
+              )}`}
+            </InfoText>
+          </AccountList>
         </AccountSection>
-        {/* {!account.closed && (
-            <>
-              {account.auto ? (
-                <AccountList>
-                  <LastUpdated
-                    lastUpdated={account.providerLastUpdated}
-                    timeBetweenUpdates={timeBetweenUpdates}
-                  />
-                  <AccountListItem>
-                    <InfoIcon name="banks.zoopla.icon" size="24" />
-                    <InfoText>
-                      {T("accounts.details.type.properties.isAuto")}
-                    </InfoText>
-                  </AccountListItem>
-                </AccountList>
-              ) : (
-                <>
-                  <AccountListItem>
-                    <InfoText>{getExplanation()}</InfoText>
-                  </AccountListItem>
-                  {isEnabled("mh2:enableZooplaConnections") && (
-                    <ZooplaConnectionCTA
-                      accountUid={account.uid}
-                      navigateTo={routingService.navigateTo}
-                    />
-                  )}
-                </>
-              )}
-            </>
-          )}
-        </AccountPanel>
-        <ListPanel
-          title={T("accounts.details.type.properties.details")}
-          items={getDetails([account.name, account.bankName, account.postcode])}
-        />
+        <AccountSection>
+          <AccountLabel>Property details</AccountLabel>
+          <RowContainer>
+            <AccountList>
+              <AccountListItem key="name">
+                <InfoText>{account.name}</InfoText>
+              </AccountListItem>
+              <AccountListItem key="type">
+                <InfoText>{account.bankName}</InfoText>
+              </AccountListItem>
+              <AccountListItem key="postcode">
+                <InfoText>{account.postcode}</InfoText>
+              </AccountListItem>
+            </AccountList>
+          </RowContainer>
+        </AccountSection>
+        {mortgage && (
+          <AccountSection>
+            <AccountLabel>Mortgage</AccountLabel>
+            <RowContainer onClick={onClick}>
+              <AccountListItem key="balance">
+                <InfoText>{`£${Math.abs(
+                  account.associatedMortgages[0].currentBalance
+                )}`}</InfoText>
+              </AccountListItem>
+              <AccountListItem key="mortgage">
+                <InfoText>{account.associatedMortgages[0].name}</InfoText>
+              </AccountListItem>
 
-        {account.notes && (
-          <ListPanel
-            title={T("accounts.details.notesLabel")}
-            items={getDetails([account.notes])}
-          />
+              {onClick && <Chevron>></Chevron>}
+            </RowContainer>
+          </AccountSection>
+          // <Button onPress={() => setModalIsOpen(true)} type="secondary">
+          //   {T("accounts.details.type.properties.changeMortgage")}
+          // </Button>
         )}
-
-        {mortgage ? (
-          <ListPanel
-            onClick={gotoMortgage}
-            title={T("accounts.details.type.properties.mortgage")}
-            items={getDetails([
-              numberFormatter.formatExpense(mortgage.currentBalance),
-              mortgage.name,
-            ])}
-          >
-            <Button onPress={() => setModalIsOpen(true)} type="secondary">
-              {T("accounts.details.type.properties.changeMortgage")}
-            </Button>
-          </ListPanel>
-        ) : (
-          connectMortgageButton()
-        )}
-
-        <ButtonPanel>
-          <ManageButton account={account} onPress={manageConnectionHandler} />
-          <ArchiveButton onPress={archiveHandler} closed={account.closed} />
-        </ButtonPanel>  */}
       </Inset>
     </div>
   );

@@ -1,20 +1,12 @@
 import styled, { css } from "styled-components";
 
-export const Balance = styled.h2`
-  font-size: 24px;
+export const AccountList = styled.ul`
+  list-style: none;
 `;
 
-export const LabelText = styled.h2`
-  font-weight: bold;
-  font-size: ${(props) => props.theme.typography.l.fontSize}px;
-  line-height: ${(props) => props.theme.typography.l.lineHeight};
-`;
-
-// export const AccountList = styled.ul`
-//   list-style: none;
-// `;
-
-export const AccountLabel = styled(LabelText)`
+export const AccountLabel = styled.div`
+  font-size: ${(props) => props.theme.typography.xl.fontSize}px;
+  line-height: ${(props) => props.theme.typography.xl.lineHeight};
   color: ${(props) => props.theme.colors.neutral[900]};
   margin-bottom: ${(props) => props.theme.space.s};
 `;
@@ -25,8 +17,8 @@ export const AccountLabel = styled(LabelText)`
 // `;
 
 export const AccountHeadline = styled.h2`
-  font-size: ${(props) => props.theme.typography.xl.fontSize}px;
-  line-height: ${(props) => props.theme.typography.xl.lineHeight};
+  font-size: ${(props) => props.theme.typography["2xl"].fontSize};
+  line-height: ${(props) => props.theme.typography["2xl"].lineHeight};
   color: ${(props) => props.theme.colors.neutral[800]};
   margin-bottom: ${(props) => props.theme.space.s};
 `;
@@ -35,6 +27,8 @@ export const InfoText = styled.div`
   line-height: 1.6;
   font-size: ${(props) => props.theme.typography.l.fontSize};
   color: ${(props) => props.theme.colors.neutral[800]};
+  display: flex;
+  margin-bottom: ${(props) => props.theme.space.s};
 
   p {
     margin-bottom: ${(props) => props.theme.space.s};
@@ -51,23 +45,24 @@ padding: ${(props) => props.theme.space.m} 0;
     border-bottom: 1px solid ${(props) => props.theme.colors.neutral[200]};
   }
 }
-// `;
-// export const Flex = styled.div`
-//   display: flex;
-//   margin-bottom: ${push(1)};
-// `;
+`;
+
+export const Flex = styled.div`
+  display: flex;
+  margin-bottom: ${(props) => props.theme.space.s};
+`;
 
 // export const AccountWrapper = styled.div`
 //   margin-bottom: ${push(2)};
 // `;
 
-// export const AccountListItem = styled.div`
-//   display: flex;
+export const AccountListItem = styled.div`
+  display: flex;
 
-//   &:not(:last-of-type) {
-//     margin-bottom: ${push(1)};
-//   }
-// `;
+  &:not(:last-of-type) {
+    margin-bottom: ${(props) => props.theme.space.s};
+  }
+`;
 
 // export const Dialog = styled.div`
 //   display: flex;
@@ -92,19 +87,24 @@ padding: ${(props) => props.theme.space.m} 0;
 //   margin-left: ${push(2)};
 // `;
 
-// export const RowContainer = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   ${(props) =>
-//     props.onClick &&
-//     css`
-//       cursor: pointer;
-//     `}
-//   &:not(:last-child) {
-//     margin-bottom: ${push(2)};
-//   }
-// `;
+export const RowContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ${(props) =>
+    props.onClick &&
+    css`
+      cursor: pointer;
+    `}
+  &:not(:last-child) {
+    margin-bottom: ${(props) => props.theme.space.m};
+  }
+`;
+
+export const Chevron = styled.div`
+  margin-left: ${(props) => props.theme.space.m};
+  opacity: 0.3;
+`;
 
 // export const FormContainer = styled.div`
 //   min-height: ${push(20)};
