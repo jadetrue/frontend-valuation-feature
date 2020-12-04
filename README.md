@@ -28,6 +28,8 @@ Someone started implementing this feature with a `useEffect` hook, but you shoul
 
 ### Notes
 
+Most of your work should take place inside the `components/` directory.
+
 We're more interested in seeing how you approach the problem than seeing a perfect example, try to spend around **one hour** working on it.
 
 On completion, email a link to your repository to your contact at Moneyhub, and ensure it is publicly accessible.
