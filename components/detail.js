@@ -58,7 +58,10 @@ const Detail = ({}) => {
       <AccountSection>
         <AccountLabel>Estimated Value</AccountLabel>
         <AccountHeadline>
-          {`£${account.recentValuation.amount}`}
+          {new Intl.NumberFormat("en-GB", {
+            style: "currency",
+            currency: "GBP",
+          }).format(account.recentValuation.amount)}
         </AccountHeadline>
         <AccountList>
           <InfoText>
@@ -90,9 +93,14 @@ const Detail = ({}) => {
             onClick={() => alert("You have navigated to the mortgage page")}
           >
             <AccountList>
-              <InfoText>{`£${Math.abs(
-                account.associatedMortgages[0].currentBalance
-              )}`}</InfoText>
+              <InfoText>
+                {new Intl.NumberFormat("en-GB", {
+                  style: "currency",
+                  currency: "GBP",
+                }).format(
+                  Math.abs(account.associatedMortgages[0].currentBalance)
+                )}
+              </InfoText>
               <InfoText>{account.associatedMortgages[0].name}</InfoText>
             </AccountList>
           </RowContainer>
