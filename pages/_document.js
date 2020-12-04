@@ -1,3 +1,7 @@
+/*
+ * styled-components SSR set up
+ * Ignore
+ */
 import Document from "next/document"
 import {ServerStyleSheet} from "styled-components"
 
