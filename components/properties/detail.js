@@ -95,24 +95,4 @@ const Detail = ({}) => {
   );
 };
 
-Detail.propTypes = {
-  account: PropTypes.shape({
-    uid: PropTypes.string.isRequired,
-    associatedMortgages: PropTypes.array.isRequired,
-    yearlyAppreciation: PropTypes.number,
-    type: PropTypes.string.isRequired,
-    closed: PropTypes.string,
-    linkWithMortgages: PropTypes.bool,
-    name: PropTypes.string.isRequired,
-    bankName: PropTypes.string,
-    recentValuation: PropTypes.object,
-    notes: PropTypes.string,
-    postcode: PropTypes.string,
-    providerLastUpdated: PropTypes.string,
-    auto: PropTypes.bool,
-    originalPurchasePrice: PropTypes.number,
-    originalPurchasePriceDate: PropTypes.string,
-  }),
-};
-
 export default Detail;
