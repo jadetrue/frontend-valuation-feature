@@ -1,5 +1,7 @@
 import {ThemeProvider} from "styled-components"
+
 import {theme} from "../theme"
+import "../styles/reset.css"
 import "../styles/globals.css"
 
 function App({Component, pageProps}) {
