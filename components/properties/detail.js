@@ -1,8 +1,8 @@
 /* eslint-disable max-statements */
-import PropTypes from "prop-types";
-import React from "react";
-import { add, format } from "date-fns";
-import { Button } from "../button";
+import PropTypes from "prop-types"
+import React from "react"
+import {add, format} from "date-fns"
+import {Button} from "../button"
 
 import {
   AccountHeadline,
@@ -12,7 +12,7 @@ import {
   InfoText,
   Inset,
   RowContainer,
-} from "./style";
+} from "./style"
 
 const Detail = () => {
   const account = {
@@ -26,7 +26,7 @@ const Detail = () => {
     subType: "residential",
     originalPurchasePrice: 250000,
     originalPurchasePriceDate: "2017-12-03",
-    recentValuation: { amount: 310000, status: "good" },
+    recentValuation: {amount: 310000, status: "good"},
     associatedMortgages: [
       {
         name: "HSBC Repayment Mortgage",
@@ -38,12 +38,12 @@ const Detail = () => {
     postcode: "BS1 2AA",
     lastUpdate: "2020-12-01T08:55:33.421Z",
     updateAfterDays: 30,
-  };
+  }
 
-  let mortgage;
-  const lastUpdate = new Date(account.lastUpdate);
+  let mortgage
+  const lastUpdate = new Date(account.lastUpdate)
   if (account.associatedMortgages.length) {
-    mortgage = account.associatedMortgages[0];
+    mortgage = account.associatedMortgages[0]
   }
 
   return (
@@ -60,7 +60,7 @@ const Detail = () => {
             </InfoText>
             <InfoText>
               {`Next update ${format(
-                add(lastUpdate, { days: account.updateAfterDays }),
+                add(lastUpdate, {days: account.updateAfterDays}),
                 "do MMM yyyy"
               )}`}
             </InfoText>
@@ -94,8 +94,8 @@ const Detail = () => {
         <Button>Edit account</Button>
       </Inset>
     </div>
-  );
-};
+  )
+}
 
 Detail.propTypes = {
   account: PropTypes.shape({
@@ -115,6 +115,6 @@ Detail.propTypes = {
     originalPurchasePrice: PropTypes.number,
     originalPurchasePriceDate: PropTypes.string,
   }),
-};
+}
 
-export default Detail;
+export default Detail

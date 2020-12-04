@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Button = styled.button`
   background-color: ${(props) => props.theme.colors.primary.default};
@@ -7,4 +7,4 @@ export const Button = styled.button`
   min-height: ${(props) => props.theme.space.xl};
   width: 100%;
   border: none;
-`;
+`
