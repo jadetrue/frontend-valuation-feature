@@ -44,11 +44,6 @@ export const AccountSection = styled.div`
 }
 `;
 
-export const Flex = styled.div`
-  display: flex;
-  margin-bottom: ${(props) => props.theme.space.s};
-`;
-
 export const AccountListItem = styled.div`
   display: flex;
 

@@ -14,7 +14,7 @@ export default (req, res) => {
       subType: "residential",
       originalPurchasePrice: 250000,
       originalPurchasePriceDate: "2017-12-03",
-      recentValuation: '{amount: 310000, status: "good"}',
+      recentValuation: { amount: 310000, status: "good" },
       associatedMortgages: [
         {
           name: "HSBC Repayment Mortgage",
