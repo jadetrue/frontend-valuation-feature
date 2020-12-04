@@ -12,7 +12,6 @@ We would like you to:
 
 - Add a "Valuation changes" section to the page, using `mock.png` as a rough guide
 - Ensure markup is semantic and accessible
-- Refactor the feature to work with dynamic data
 - Consider opportunities to reduce repetition in the code and increase legibility
 - Make effective use of Git
 
@@ -21,6 +20,15 @@ We prefer:
 - Functional React components
 - `styled-components` for styling
 - `prop-types` for typechecking
+
+### API
+
+Details of a property are located in the API at `/api/account`, use this endpoint to populate the app with data.
+Someone started implementing this feature with a `useEffect` hook, but you should use whichever method you're most comfortable with.
+
+### Notes
+
+Most of your work should take place inside the `components/` directory.
 
 We're more interested in seeing how you approach the problem than seeing a perfect example, try to spend around **one hour** working on it.
 
