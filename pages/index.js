@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Detail from "../components/properties/detail";
+import Detail from "../components/detail";
 import { Banner } from "../components/banner";
 
 const Main = styled.main`
