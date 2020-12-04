@@ -1,7 +1,10 @@
 import {ThemeProvider} from "styled-components"
-import {theme} from "../theme"
 
-function MyApp({Component, pageProps}) {
+import {theme} from "../theme"
+import "../styles/reset.css"
+import "../styles/globals.css"
+
+function App({Component, pageProps}) {
   return (
     <ThemeProvider theme={theme}>
       <Component {...pageProps} />
@@ -9,4 +12,4 @@ function MyApp({Component, pageProps}) {
   )
 }
 
-export default MyApp
+export default App

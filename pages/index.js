@@ -10,6 +10,16 @@ const Box = styled.div`
   padding: 32px;
 `;
 
-export default function Home() {
-  return <Detail />;
+const Main = styled.main`
+  max-width: 960px;
+  margin: 0 auto;
+`;
+
+export default function PropertyDetails() {
+  return (
+    <Main>
+      <Detail />
+      <Box>Property Details</Box>
+    </Main>
+  );
 }
