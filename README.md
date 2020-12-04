@@ -1,8 +1,30 @@
 # Moneyhub Tech Test - Property Details
 
-This is a single
+This is a prototype of a new feature in Moneyhub.
+Customers will now be able to receive automatic value updates on their properties
+and we would like to enhance the experience by summarizing their changes
+
+This prototype is built using NextJS.
 
 ## Requirements
+
+We would like you to:
+
+- Add a "Valuation changes" section to the page, using `mock.png` as a rough guide
+- Ensure markup is semantic and accessible
+- Refactor the feature to work with dynamic data
+- Consider opportunities to reduce repetition in the code and increase legibility
+- Make effective use of Git
+
+We prefer:
+
+- Functional React components
+- `styled-components` for styling
+- `prop-types` for typechecking
+
+We're more interested in seeing how you approach the problem than seeing a perfect example, try to spend around **one hour** working on it.
+
+On completion, email a link to your repository to your contact at Moneyhub, and ensure it is publicly accessible.
 
 ## Getting Started
 
