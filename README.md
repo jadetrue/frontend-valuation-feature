@@ -38,7 +38,7 @@ We're more interested in seeing how you approach the problem than seeing a perfe
 For the second interview there are some extra questions we'd like you to consider around this task.
 
 1. Given more time, were there other changes you would have liked to make?
-2. What UX or design improvements or alterations might you suggest? These can be to existing components or new components.
+2. What UX or design improvements or alterations might you suggest? These can be to existing components or completely new ideas.
 
 On completion, email a link to your repository to your contact at Moneyhub, and ensure it is publicly accessible.
 
