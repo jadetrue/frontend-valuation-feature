@@ -12,7 +12,7 @@ We would like you to:
 
 - Add a "Valuation changes" section to the page, using `mock.png` as a rough guide
   - sincePurchase is calculated by `recentValuation - originalPurchasePrice`
-  - sincePurchasePercentage is calculated by `sincePurchase / originalPurchasePrice`
+  - sincePurchasePercentage is calculated by `sincePurchase / originalPurchasePrice * 100`
   - annualAppreciation is calulcated by `sincePurchasePercentage / number of years since purchase`
 - Ensure markup is semantic and accessible
 - Consider opportunities to reduce repetition in the code and increase legibility

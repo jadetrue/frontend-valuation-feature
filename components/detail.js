@@ -24,7 +24,7 @@ const account = {
   type: "properties",
   subType: "residential",
   originalPurchasePrice: 250000,
-  originalPurchasePriceDate: "2017-12-03",
+  originalPurchasePriceDate: "2017-09-03",
   recentValuation: { amount: 310000, status: "good" },
   associatedMortgages: [
     {
