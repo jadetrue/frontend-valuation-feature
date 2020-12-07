@@ -35,7 +35,7 @@ Most of your work should take place inside the `components/` directory.
 
 We're more interested in seeing how you approach the problem than seeing a perfect example, try to spend around **one hour** working on it.
 
-For the second interview there are some extra questions we'd like you to consider around this task.
+Some questions we'd like you to consider around this task.
 
 1. Given more time, were there other changes you would have liked to make?
 2. What UX or design improvements or alterations might you suggest? These can be to existing components or completely new ideas.
