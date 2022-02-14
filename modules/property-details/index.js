@@ -1,18 +1,12 @@
 /* eslint-disable max-statements */
-import PropTypes from "prop-types";
-import React, { useEffect } from "react";
 import { add, format } from "date-fns";
-import { Button } from "./button";
-
+import React, { useEffect } from "react";
+import { Button } from "../../components/button";
+import RowContainer from "../../components/row-container";
 import {
-  AccountHeadline,
-  AccountLabel,
-  AccountSection,
-  AccountList,
-  InfoText,
-  Inset,
-  RowContainer,
+  AccountHeadline, AccountLabel, AccountList, AccountListItem, AccountSection, InfoText, Inset
 } from "./style";
+
 
 const account = {
   uid: "65156cdc-5cfd-4b34-b626-49c83569f35e",
@@ -64,24 +58,24 @@ const Detail = ({}) => {
           }).format(account.recentValuation.amount)}
         </AccountHeadline>
         <AccountList>
-          <InfoText>
+          <AccountListItem><InfoText>
             {`Last updated ${format(lastUpdate, "do MMM yyyy")}`}
-          </InfoText>
-          <InfoText>
+          </InfoText></AccountListItem>
+          <AccountListItem><InfoText>
             {`Next update ${format(
               add(lastUpdate, { days: account.updateAfterDays }),
               "do MMM yyyy"
             )}`}
-          </InfoText>
+          </InfoText></AccountListItem>
         </AccountList>
       </AccountSection>
       <AccountSection>
         <AccountLabel>Property details</AccountLabel>
         <RowContainer>
           <AccountList>
-            <InfoText>{account.name}</InfoText>
-            <InfoText>{account.bankName}</InfoText>
-            <InfoText>{account.postcode}</InfoText>
+            <AccountListItem><InfoText>{account.name}</InfoText></AccountListItem>
+            <AccountListItem><InfoText>{account.bankName}</InfoText></AccountListItem>
+            <AccountListItem><InfoText>{account.postcode}</InfoText></AccountListItem>
           </AccountList>
         </RowContainer>
       </AccountSection>
@@ -93,15 +87,15 @@ const Detail = ({}) => {
             onClick={() => alert("You have navigated to the mortgage page")}
           >
             <AccountList>
-              <InfoText>
+              <AccountListItem><InfoText>
                 {new Intl.NumberFormat("en-GB", {
                   style: "currency",
                   currency: "GBP",
                 }).format(
                   Math.abs(account.associatedMortgages[0].currentBalance)
                 )}
-              </InfoText>
-              <InfoText>{account.associatedMortgages[0].name}</InfoText>
+              </InfoText></AccountListItem>
+              <AccountListItem><InfoText>{account.associatedMortgages[0].name}</InfoText></AccountListItem>
             </AccountList>
           </RowContainer>
         </AccountSection>
