@@ -1,10 +1,12 @@
 # Moneyhub Tech Test - Property Details
 
-This is a prototype of a new feature in Moneyhub.
+This is a prototype of a new feature in Moneyhub
 Customers will now be able to receive automatic value updates on their properties
 and we would like to enhance the experience by summarizing their changes
 
-This prototype is built using NextJS.
+Please read this whole document before starting
+
+This prototype is built using NextJS and makes use of styled components
 
 ## Requirements
 
@@ -17,11 +19,13 @@ We would like you to:
   - For reference the colours used for the positive change in the image are #c2f7e1 and #006b57
   - *Optional*: Consider what other variants this component could take
 2. *Optional*: Request data via the API rather than the hardcoded object in `property-details/index`
-  - Details of a property are located in the API at `/api/account`, use this endpoint to populate the app with data.
-  - Someone started implementing this feature with a `useEffect` hook, you can finish implementing this method or use another that you are familiar with.
+  - Details of a property are located in the API at `/api/account`, use this endpoint to populate the app with data
+  - Someone started implementing this feature with a `useEffect` hook, you can finish implementing this method or use another that you are familiar with
 3. *Optional*: Consider opportunities to reduce repetition in the code and increase legibility
-  - This could be creating new components, simplifying existing ones, extracting helper function to simplify code or styling. 
+  - This could be creating new components, simplifying existing ones, extracting helper function to simplify code or styling
   - Show us what you can do and implement a few of these if you have time
+
+Try to:
 
 - Ensure markup is semantic and accessible
 - Make use of a centralised theme
