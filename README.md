@@ -37,14 +37,15 @@ We prefer:
 
 ----
 
-*IMPORTANT*
+**IMPORTANT**
+
 Most of your work should take place inside the `components/` and `modules/` directory. There are some example components and styles available and the theme is defined in `theme/`. This task has been mocked up in Next.js to provide a full working environment and as such shouldn't be taken as a _complete_ application. We are interested in assessing your React frontend skills and are not testing your knowledge of Next.js, you should not need to make any changes in the `pages/` directory.
 
 ----
 
 We recommend working through the list of requirements above but don't expect you to finish all of them. We're more interested in seeing how you approach the problem than seeing a perfect example, try not to spend more **two hours** working on it. 
 
-We also ask that you update the reaedme with answers to the following questions 
+We also ask that you update the readme with answers to the following questions 
 
 1. Given more time, what other changes you would have liked to make?
 2. What UX or design improvements or alterations might you suggest? These can be to existing components or completely new ideas.
