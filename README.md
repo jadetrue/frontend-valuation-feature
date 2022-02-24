@@ -12,7 +12,7 @@ This prototype is built using NextJS and makes use of styled components
 
 We would like you to:
 
-1. *Required*: Add a "Valuation changes" section to the page. `mock.png` has been provided as a design reference for this new feature
+1. *Required*: Add a "Valuation changes" section to the page. `design-mock-up.png` has been provided as a design reference for the page and `detail-design-mock-up.png` shows the specific feature to be added. Make use of existing fonts and styles to match the look and feel of the existing app rather than trying to match the mock up exactly.
   - sincePurchase is calculated by `recentValuation - originalPurchasePrice`
   - sincePurchasePercentage is calculated by `sincePurchase / originalPurchasePrice * 100`
   - annualAppreciation is calulcated by `sincePurchasePercentage / number of years since purchase`
