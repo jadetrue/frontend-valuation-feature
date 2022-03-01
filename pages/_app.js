@@ -48,6 +48,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  padding-bottom: 100px;
 `
 
 function App({Component, pageProps}) {
