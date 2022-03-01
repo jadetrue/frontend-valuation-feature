@@ -17,13 +17,16 @@ We would like you to:
   - sincePurchasePercentage is calculated by `sincePurchase / originalPurchasePrice * 100`
   - annualAppreciation is calulcated by `sincePurchasePercentage / number of years since purchase`
   - For reference the colours used for the positive change in the image are #c2f7e1 and #006b57
-  - *Optional*: Consider what other variants this component could take
+
+Consider what other variants this component could take
+
+Consider opportunities to reduce repetition in the code and increase legibility
+  - This could be creating new components, simplifying existing ones, extracting helper function to simplify code or styling
+  - Show us what you can do and implement a few of these if you have time
+
 2. *Optional*: Request data via the API rather than the hardcoded object in `property-details/index`
   - Details of a property are located in the API at `/api/account`, use this endpoint to populate the app with data
   - Someone started implementing this feature with a `useEffect` hook, you can finish implementing this method or use another that you are familiar with
-3. *Optional*: Consider opportunities to reduce repetition in the code and increase legibility
-  - This could be creating new components, simplifying existing ones, extracting helper function to simplify code or styling
-  - Show us what you can do and implement a few of these if you have time
 
 Try to:
 
