@@ -18,11 +18,11 @@ We would like you to:
   - annualAppreciation is calulcated by `sincePurchasePercentage / number of years since purchase`
   - For reference the colours used for the positive change in the image are #c2f7e1 and #006b57
 
-Consider what other variants this component could take
+  Consider what other variants this component could take
 
-Consider opportunities to reduce repetition in the code and increase legibility
-  - This could be creating new components, simplifying existing ones, extracting helper function to simplify code or styling
-  - Show us what you can do and implement a few of these if you have time
+  Consider opportunities to reduce repetition in the code and increase legibility
+    - This could be creating new components, simplifying existing ones, extracting helper function to simplify code or styling
+    - Show us what you can do and implement a few of these if you have time
 
 2. *Optional*: Request data via the API rather than the hardcoded object in `property-details/index`
   - Details of a property are located in the API at `/api/account`, use this endpoint to populate the app with data
