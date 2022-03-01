@@ -12,21 +12,30 @@ This prototype is built using NextJS and makes use of styled components
 
 We would like you to:
 
-1. *Required*: Add a "Valuation changes" section to the page. `design-mock-up.png` has been provided as a design reference for the page and `detail-design-mock-up.png` shows the specific feature to be added. Make use of existing fonts and styles to match the look and feel of the existing app rather than trying to match the mock up exactly.
-  - sincePurchase is calculated by `recentValuation - originalPurchasePrice`
-  - sincePurchasePercentage is calculated by `sincePurchase / originalPurchasePrice * 100`
-  - annualAppreciation is calulcated by `sincePurchasePercentage / number of years since purchase`
-  - For reference the colours used for the positive change in the image are #c2f7e1 and #006b57
+----
 
-  Consider what other variants this component could take
+**Required**: Add a "Valuation changes" section to the page. `design-mock-up.png` has been provided as a design reference for the page and `detail-design-mock-up.png` shows the specific feature to be added. Make use of existing fonts and styles to match the look and feel of the existing app rather than trying to match the mock up exactly.
 
-  Consider opportunities to reduce repetition in the code and increase legibility
-    - This could be creating new components, simplifying existing ones, extracting helper function to simplify code or styling
-    - Show us what you can do and implement a few of these if you have time
+ ```
+  sincePurchase = `recentValuation - originalPurchasePrice`
+  sincePurchasePercentage = `sincePurchase / originalPurchasePrice * 100`
+  annualAppreciation =`sincePurchasePercentage / number of years since purchase`
+  colours used for the positive change in the image are #c2f7e1 and #006b57
+ ```
 
-2. *Optional*: Request data via the API rather than the hardcoded object in `property-details/index`
+Consider what other variants this component could take
+
+Consider opportunities to reduce repetition in the code and increase legibility
+- This could be creating new components, simplifying existing ones, extracting helper function to simplify code or styling
+- Show us what you can do and implement a few of these if you have time
+
+----
+
+**Optional**: Request data via the API rather than the hardcoded object in `property-details/index`
   - Details of a property are located in the API at `/api/account`, use this endpoint to populate the app with data
   - Someone started implementing this feature with a `useEffect` hook, you can finish implementing this method or use another that you are familiar with
+
+----
 
 Try to:
 
@@ -40,15 +49,13 @@ We prefer:
 - `styled-components` for styling
 - `prop-types` for typechecking
 
-### Notes
-
 ----
 
 **IMPORTANT**
 
 Most of your work should take place inside the `components/` and `modules/` directory. There are some example components and styles available and the theme is defined in `theme/`. This task has been mocked up in Next.js to provide a full working environment and as such shouldn't be taken as a _complete_ application. We are interested in assessing your React frontend skills and are not testing your knowledge of Next.js, you should not need to make any changes in the `pages/` directory.
 
-----
+### Notes
 
 We recommend working through the list of requirements above but don't expect you to finish all of them. We're more interested in seeing how you approach the problem than seeing a perfect example, try not to spend more **two hours** working on it. 
 
