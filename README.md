@@ -23,7 +23,7 @@ We would like you to:
   colours used for the positive change in the image are #c2f7e1 and #006b57
  ```
 
-Consider what other variants this component could take
+Consider what other data this component could take and how that might affect your theme and variable naming
 
 Consider opportunities to reduce repetition in the code and increase legibility
 - This could be creating new components, simplifying existing ones, extracting helper function to simplify code or styling
