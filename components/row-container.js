@@ -7,14 +7,14 @@ const ClickableContainer = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
+&:not(:last-child) {
+  margin-bottom: ${(props) => props.theme.space.m};
+}
 ${(props) =>
   props.onClick &&
   css`
     cursor: pointer;
   `}
-&:not(:last-child) {
-  margin-bottom: ${(props) => props.theme.space.m};
-}
 `;
 
 const RowContainer = ({children, onClick}) => (

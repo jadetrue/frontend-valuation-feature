@@ -1,6 +1,6 @@
 /* eslint-disable max-statements */
 import { add, format } from "date-fns";
-import React, { useEffect } from "react";
+import React from "react";
 import { Button } from "../../components/button";
 import RowContainer from "../../components/row-container";
 import {
@@ -34,13 +34,6 @@ const account = {
 };
 
 const Detail = ({}) => {
-  useEffect(() => {
-    window
-      .fetch("/api/account")
-      .then((res) => res.json())
-      .then(console.log);
-  }, []);
-
   let mortgage;
   const lastUpdate = new Date(account.lastUpdate);
   if (account.associatedMortgages.length) {
