@@ -55,9 +55,13 @@ We prefer:
 
 Most of your work should take place inside the `components/` and `modules/` directory. There are some example components and styles available and the theme is defined in `theme/`. This task has been mocked up in Next.js to provide a full working environment and as such shouldn't be taken as a _complete_ application. We are interested in assessing your React frontend skills and are not testing your knowledge of Next.js, you should not need to make any changes in the `pages/` directory.
 
+---
+
 ## 📸 Screenshots
 
 ![image](https://github.com/jadetrue/frontend-valuation-feature/blob/main/public/screencapture.png?raw=true)
+
+---
 
 ## ❓Questions
 
@@ -67,13 +71,19 @@ Most of your work should take place inside the `components/` and `modules/` dire
 2. What UX or design improvements or alterations might you suggest? These can be to existing components or completely new ideas.<br />
    It would be nice to have a negative and neutral label. So the label component would likely have 3 different states "positive", "neutral" and "negative" depending on the number/calculation.
 
+---
+
 ## 🎨 Mock designs
 
 ![image](https://github.com/jadetrue/frontend-valuation-feature/blob/main/design-mock-up.png?raw=true)
 
+---
+
 ## 🧰 Tools
 
 -   [NextJS](https://nextjs.org/)
+
+---
 
 ## ✍🏻 Author
 
