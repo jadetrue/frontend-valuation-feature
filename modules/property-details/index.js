@@ -63,7 +63,8 @@ const Detail = ({}) => {
 
     const numberOfYearsSincePurchase = yearToday - yearPurchased;
 
-    const annualAppreciation = sincePurchase / numberOfYearsSincePurchase;
+    const annualAppreciation =
+        sincePurchasePercentage / numberOfYearsSincePurchase;
 
     return (
         <Inset>
