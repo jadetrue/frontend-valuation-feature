@@ -7,8 +7,8 @@ export const Label = styled.div`
     font-weight: bold;
     border-radius: ${(props) => props.theme.space.xl};
     font-size: ${(props) => props.theme.typography.m.fontSize};
-    padding-right: ${(props) => props.theme.space.l};
-    padding-left: ${(props) => props.theme.space.l};
+    padding-right: ${(props) => props.theme.space.m};
+    padding-left: ${(props) => props.theme.space.m};
     width: fit;
-    height: 50%;
+    height: fit;
 `;

@@ -9,6 +9,7 @@ import {
     AccountLabel,
     AccountList,
     AccountListItem,
+    AccountListItemTwoColumn,
     AccountSection,
     InfoText,
     Inset,
@@ -56,6 +57,7 @@ const Detail = ({}) => {
     // Since purchase / original purchase price * 100
     const sincePurchasePercentage =
         (sincePurchase / account.originalPurchasePrice) * 100;
+
     // Since purchase percentage / number of years since purchase
     // Work out number of years since purchased date
     const yearToday = format(new Date(), "yyyy");
@@ -65,6 +67,11 @@ const Detail = ({}) => {
 
     const annualAppreciation =
         sincePurchasePercentage / numberOfYearsSincePurchase;
+
+    const formatOriginalPurchasePrice = new Intl.NumberFormat("en-GB", {
+        style: "currency",
+        currency: "GBP",
+    }).format(Math.abs(account.originalPurchasePrice));
 
     return (
         <Inset>
@@ -119,23 +126,16 @@ const Detail = ({}) => {
                     <AccountList>
                         <AccountListItem>
                             <InfoText>
-                                {`Purchased for ${new Intl.NumberFormat(
-                                    "en-GB",
-                                    {
-                                        style: "currency",
-                                        currency: "GBP",
-                                    }
-                                ).format(
-                                    Math.abs(account.originalPurchasePrice)
-                                )} in 
-                                ${format(
+                                {`Purchased for `}
+                                <b>{formatOriginalPurchasePrice}</b>
+                                {` in ${format(
                                     originalPurchasePriceDate,
                                     "MMMM yyyy"
                                 )}
                                 `}
                             </InfoText>
                         </AccountListItem>
-                        <AccountListItem>
+                        <AccountListItemTwoColumn>
                             <InfoText>Since purchase</InfoText>
                             <Label>{`${new Intl.NumberFormat("en-GB", {
                                 style: "currency",
@@ -143,11 +143,11 @@ const Detail = ({}) => {
                             }).format(
                                 Math.abs(sincePurchase)
                             )} (${sincePurchasePercentage}%)`}</Label>
-                        </AccountListItem>
-                        <AccountListItem>
+                        </AccountListItemTwoColumn>
+                        <AccountListItemTwoColumn>
                             <InfoText>Annual appreciation</InfoText>
                             <Label>{annualAppreciation}%</Label>
-                        </AccountListItem>
+                        </AccountListItemTwoColumn>
                     </AccountList>
                 </RowContainer>
             </AccountSection>
