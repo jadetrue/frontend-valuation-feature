@@ -56,6 +56,14 @@ const Detail = ({}) => {
     // Since purchase / original purchase price * 100
     const sincePurchasePercentage =
         (sincePurchase / account.originalPurchasePrice) * 100;
+    // Since purchase percentage / number of years since purchase
+    // Work out number of years since purchased date
+    const yearToday = format(new Date(), "yyyy");
+    const yearPurchased = format(originalPurchasePriceDate, "yyyy");
+
+    const numberOfYearsSincePurchase = yearToday - yearPurchased;
+
+    const annualAppreciation = sincePurchase / numberOfYearsSincePurchase;
 
     return (
         <Inset>
@@ -134,6 +142,10 @@ const Detail = ({}) => {
                             }).format(
                                 Math.abs(sincePurchase)
                             )} (${sincePurchasePercentage}%)`}</Label>
+                        </AccountListItem>
+                        <AccountListItem>
+                            <InfoText>Annual appreciation</InfoText>
+                            <Label>{annualAppreciation}%</Label>
                         </AccountListItem>
                     </AccountList>
                 </RowContainer>
