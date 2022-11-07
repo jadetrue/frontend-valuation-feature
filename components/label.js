@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Label = styled.label`
+export const Label = styled.div`
     background-color: #c2f7e1;
     color: #006b57;
     text-align: center;
