@@ -2,6 +2,7 @@
 import { add, format } from "date-fns";
 import React from "react";
 import { Button } from "../../components/button";
+import { Label } from "../../components/label";
 import RowContainer from "../../components/row-container";
 import {
     AccountHeadline,
@@ -49,6 +50,12 @@ const Detail = ({}) => {
     const originalPurchasePriceDate = new Date(
         account.originalPurchasePriceDate
     );
+    // Account recent valuation amount - original purchase price
+    const sincePurchase =
+        account.recentValuation.amount - account.originalPurchasePrice;
+    // Since purchase / original purchase price * 100
+    const sincePurchasePercentage =
+        (sincePurchase / account.originalPurchasePrice) * 100;
 
     return (
         <Inset>
@@ -118,6 +125,15 @@ const Detail = ({}) => {
                                 )}
                                 `}
                             </InfoText>
+                        </AccountListItem>
+                        <AccountListItem>
+                            <InfoText>Since purchase</InfoText>
+                            <Label>{`${new Intl.NumberFormat("en-GB", {
+                                style: "currency",
+                                currency: "GBP",
+                            }).format(
+                                Math.abs(sincePurchase)
+                            )} (${sincePurchasePercentage}%)`}</Label>
                         </AccountListItem>
                     </AccountList>
                 </RowContainer>
