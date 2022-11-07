@@ -1,4 +1,4 @@
-# 👋🏻 Frontend Challenge
+# Moneyhub Tech Test
 
 ## 📝 Requirements
 
@@ -57,11 +57,19 @@ Most of your work should take place inside the `components/` and `modules/` dire
 
 ## 📸 Screenshots
 
-<!-- ADD SCREENSHOT HERE -->
+![image](https://github.com/jadetrue/frontend-valuation-feature/blob/main/public/screencapture.png?raw=true)
+
+## ❓Questions
+
+1. Given more time, what other changes you would have liked to make?<br />
+   If I had more time, I would have loved to have added some kind of animation for this feature, maybe some kind of loading state whilst the information is being calculated, for example.
+
+2. What UX or design improvements or alterations might you suggest? These can be to existing components or completely new ideas.<br />
+   It would be nice to have a negative and neutral label. So the label component would likely have 3 different states "positive", "neutral" and "negative" depending on the number/calculation.
 
 ## 🎨 Mock designs
 
--   ![image](https://github.com/jadetrue/frontend-valuation-feature/blob/main/design-mock-up.png?raw=true)
+![image](https://github.com/jadetrue/frontend-valuation-feature/blob/main/design-mock-up.png?raw=true)
 
 ## 🧰 Tools
 
