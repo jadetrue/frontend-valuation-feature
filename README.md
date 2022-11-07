@@ -66,11 +66,15 @@ Most of your work should take place inside the `components/` and `modules/` dire
 ## ❓Questions
 
 1. Given more time, what other changes you would have liked to make?<br />
-   If I had more time, I would have loved to have added some kind of animation for this feature, maybe some kind of loading state whilst the information is being calculated, for example.
-   It would also be nice if the JSX returned was a bit more readable, i.e not calculating everything in this area and potentially having presentational components that take information through props.
+   - I would have loved to have added some kind of animation for this feature, maybe some kind of loading state whilst the information is being calculated, for example.
+   - It would also be nice if the JSX returned was a bit more readable, i.e not calculating everything in this area and potentially having presentational components that take information through props.
+   - Coding guidelines to improve readability and maintainability of the codebase.
+   - Adding tests.
+   - Update the dependencies to the latest versions, this repo still uses React 17.
 
 2. What UX or design improvements or alterations might you suggest? These can be to existing components or completely new ideas.<br />
-   It would be nice to have a negative and neutral label. So the label component would likely have 3 different states "positive", "neutral" and "negative" depending on the number/calculation.
+   - It would be nice to have a negative and neutral label. So the label component would likely have 3 different states "positive", "neutral" and "negative" depending on the number/calculation.
+   - Maybe some graphs / visuals of trends that the user can filter with ease.
 
 ---
 
